@@ -355,6 +355,10 @@ class ProjectInfo(object):
                     elif self.design.solution_type == "Q3D":
                         logger.warning("\tCreating Q3D default setup.")
                         setup = self.design.create_q3d_setup()
+                    else:
+                        logger.warning("\tCreating driven modal default setup.")
+                        setup = self.design.create_dm_setup()
+
                     self.setup_name = setup.name
                 else:
                     self.setup_name = setup_names[0]

@@ -737,6 +737,8 @@ class HfssDesign(COMWrapper):
             return HfssDTSetup(self, name)
         elif self.solution_type == "Q3D":
             return AnsysQ3DSetup(self, name)
+        else:
+            return HfssDMSetup(self, name)
 
     def create_q3d_setup(
         self,
